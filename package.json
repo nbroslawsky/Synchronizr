@@ -3,7 +3,9 @@
 	"version" : "0.0.1",
 	"author" : "Nathan Broslawsky <nathan.broslawsky@nsfive.com>",
 	"main" : "./index.js",
-	"dependencies" : {},
+	"dependencies" : {
+		"async" : "0.1.22"
+	},
 	"scripts" : {
 		"start" : "node ./index.js"
 	}
