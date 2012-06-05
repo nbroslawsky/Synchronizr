@@ -1,6 +1,8 @@
 var net = require('net'),
 	config = require('./config.json');
 
+console.log(config);
+/*
 net.createServer(function(socket) {
 	socket.name = socket.remoteAddress + ":" + socket.remotePort;
 
@@ -23,4 +25,4 @@ net.createServer(function(socket) {
 			console.log(result);
 		}
 	});
-}).listen(config.port || 1337);
+}).listen(config.port || 1337);*/

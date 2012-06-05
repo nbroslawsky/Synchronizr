@@ -6,7 +6,17 @@ var net = require('net'),
 
 var directory = '/home/nbroslawsky/test',
 	cmd = 'inotifywait',
-	args = ['-q','-e','modify','-e','attrib','-e','create','-e','delete','-e','move','--format','"%w%f"','-mr', directory],
+	args = [
+		'-q',
+		'-e','modify',
+		'-e','attrib',
+		'-e','create',
+		'-e','delete',
+		'-e','move',
+		'--format','"%w%f"',
+		'-mr', 
+		directory
+	],
 	inotify = spawn(cmd, args);
 
 
