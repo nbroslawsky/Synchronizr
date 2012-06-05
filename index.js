@@ -3,9 +3,9 @@ var net = require('net'),
 	config = require('./config.json');
 
 
-var actor = (config.master) 
-	? require('./lib/slave.js') 
-	: require('./lib/master.js');
+var actor = (config.master)
+	? require('./lib/actors/slave.js')
+	: require('./lib/actors/master.js');
 
 actor.init(config);
 
@@ -17,7 +17,7 @@ net.createServer(function(socket) {
 	socket.write("Hello " + socket.name + ". Welcome.");
 
 	var data = [];
-	
+
 	socket.on('data', function(d) { data.push(d); });
 
 	socket.on('end', function() {
