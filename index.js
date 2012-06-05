@@ -1,7 +1,15 @@
 var net = require('net'),
+	utils = require('./lib/utils.js'),
 	config = require('./config.json');
 
-console.log(config);
+
+var actor = (config.master) 
+	? require('./lib/slave.js') 
+	: require('./lib/master.js');
+
+actor.init(config);
+
+
 /*
 net.createServer(function(socket) {
 	socket.name = socket.remoteAddress + ":" + socket.remotePort;
