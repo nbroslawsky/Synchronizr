@@ -1,0 +1,10 @@
+{
+	"name" : "Synchronizr",
+	"version" : "0.0.1",
+	"author" : "Nathan Broslawsky <nathan.broslawsky@nsfive.com>",
+	"main" : "./index.js",
+	"dependencies" : {},
+	"scripts" : {
+		"start" : "node ./index.js"
+	}
+}
