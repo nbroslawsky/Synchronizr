@@ -20,7 +20,7 @@ For the master box:
 For the slave boxes:
 ```json
 {
-	"master" : "mymasterserver.local:1337"
+	"master" : "mymasterserver.local:1337",
 	"directories" : {
 		"test" : "/home/nbroslawsky/test"
 	}
