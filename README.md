@@ -12,7 +12,7 @@ For the master box:
 {
 	"port" : 1337,
 	"directories" : {
-		"test" : "/home/nbroslawsky/test"
+		"documents" : "/data/Documents"
 	}
 }
 ```
@@ -22,9 +22,11 @@ For the slave boxes:
 {
 	"master" : "mymasterserver.local:1337",
 	"directories" : {
-		"test" : "/home/nbroslawsky/test"
+		"documents" : "/home/nbroslawsky/Documents"
 	}
 }
 ```
+
+The "directories" block is important: the paths are where the named 'shares' live on the _local_ machine. In this example, the 'documents' share lives in /data/Documents on the master box, but in /home/nbroslawsky/Documents on the slave box. If you have a share name in your slave configuration that does not exist in the master's configuration, it will be skipped. If you have a share name in your master's configuration but not in your slave's, The master will monitor that folder for changes, but will not push them to your slave.
 
 The application will start in either 'master' or 'slave' mode, depending on this configuration.
